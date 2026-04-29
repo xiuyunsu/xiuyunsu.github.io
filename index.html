@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D 模型测试查看器</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script type="module" src="./js/main.js"></script>
+    <div id="model-info" style="position: absolute; top: 10px; left: 10px; color: black; background: rgba(255, 255, 255, 0.7); padding: 5px 10px; border-radius: 5px; font-family: sans-serif;">
+        模型名称: <span id="model-name">加载中...</span>
+    </div>
+
+    <div id="context-menu" style="position: absolute; background: white; border: 1px solid #ccc; box-shadow: 2px 2px 5px rgba(0,0,0,0.2); z-index: 1000; display: none;">
+        <ul style="list-style: none; margin: 0; padding: 0;">
+            <li style="padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #eee;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'" id="toggle-visibility">显示/隐藏</li>
+            <li style="padding: 8px 12px; cursor: pointer; border-bottom: 1px solid #eee;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                透明度: <input type="range" id="transparency-slider" min="0" max="1" step="0.01" value="1" style="width: 100px; vertical-align: middle;">
+            </li>
+            <li style="padding: 8px 12px; cursor: pointer;" onmouseover="this.style.background='#f0f0f0'" onmouseout="this.style.background='white'">
+                颜色: <input type="color" id="color-picker" value="#ffff00" style="vertical-align: middle;">
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
