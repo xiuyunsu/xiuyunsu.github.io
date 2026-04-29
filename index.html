@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D 模型测试查看器</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script type="module" src="./js/main.js"></script>
+
+    <div id="model-list-container" style="position: absolute; top: 10px; left: 10px; background: rgba(255, 255, 255, 0.8); padding: 5px; border-radius: 5px; font-family: sans-serif; max-height: 90%; overflow-y: auto;">
+        <h4 style="margin: 0 0 5px 0;">模型列表</h4>
+        <ul id="model-list" style="list-style: none; margin: 0; padding: 0;"></ul>
+    </div>
+
+    <div id="model-controls-panel" style="position: absolute; top: 10px; left: 200px; background: rgba(255, 255, 255, 0.9); padding: 10px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); font-family: sans-serif; display: none;">
+        <h4 style="margin: 0 0 10px 0;">控制模型: <span id="selected-model-name">无</span></h4>
+        <div style="margin-bottom: 10px;">
+            <button id="toggle-visibility" style="padding: 5px 10px;">显示/隐藏</button>
+        </div>
+        <div style="margin-bottom: 10px;">
+            透明度: <input type="range" id="transparency-slider" min="0" max="1" step="0.01" value="1" style="width: 120px; vertical-align: middle;">
+        </div>
+        <div>
+            颜色: <input type="color" id="color-picker" value="#ffff00" style="vertical-align: middle;">
+        </div>
+    </div>
+</body>
+</html>
